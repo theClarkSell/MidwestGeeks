@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#groups").kendoGrid({
+            columns: [
+                { title: 'Name', field: 'Name' },
+                { title: 'Pitch', field: 'Pitch' },
+                { title: '', field: '' }
+            ],
+            dataSource: {
+                transport: {
+                    read: "/Groups/List"
+                },
+                schema: {
+                    data: "results"
+                }
+            },
+            height: 200,
+            width: 400,
+            rowTemplate: kendo.template($("#template").html())
+        });
+    });
+</script>
+<script id="template" type="text/x-kendo-tmpl">
+    <tr>
+        <td> #= Name # </td>
+        <td> #= Pitch # </td>
+        <td>Website link</td>
+    </tr>
+</script>
+
+Groups current present and accounted for...
+
+<div id="groups" />
+

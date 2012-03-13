@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Welcome Geeks</h2>
+<script>
+    $(document).ready(function () {
+        var weekDates = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 0: [] };
+        var upcomingEvents = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: "Events/Index",
+                    dataType: "json"
+                },
+                schema: {
+                    data: 'results'
+                }
+            }
+        });
+
+        upcomingEvents.bind('change', function (data, b, c, d) {
+            handleData();
+        });
+        upcomingEvents.read();
+
+        function handleData() {
+            var eventData = upcomingEvents.data().results;
+            for (var i = 0; i < eventData.length; i++) {
+                var eventDayIndex = new Date(eventData[i].Date).getDay();
+                weekDates[eventDayIndex].push(eventData[i]);
+            }
+            var table = '<table><tr>' +
+                '<td>Sunday</td>' +
+                '<td>Monday</td>' +
+                '<td>Tuesday</td>' +
+                '<td>Wednesday</td>' +
+                '<td>Thursday</td>' +
+                '<td>Friday</td>' +
+                '<td>Saturday</td>' +
+                '</tr>'
+            '<tr>';
+            for (var i = 1; i < 6; i++) {
+                if (weekDates[i].length == 0) {
+                    table += '<td>No Events - Why not create one?</td>';
+                }
+                else {
+                    table += '<td>'
+                    for (var e = 0; e < weekDates[i].length; e++) {
+                        table += weekDates[i][e].Name + ' ' + weekDates[i][e].Date + '<br/>';
+                    }
+                    table += '</td>';
+                }
+            }
+
+            table += '</tr></table>';
+
+            $('#upcomingMeetings').html(table);
+        }
+    });
+</script>
+    show meetings for 2 weeks (maybe customizable range)
+    <div id="upcomingMeetings" />
