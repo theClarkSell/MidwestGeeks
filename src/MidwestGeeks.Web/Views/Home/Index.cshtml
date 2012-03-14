@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<h2>Welcome Geeks</h2>
 <script>
     $(document).ready(function () {
         var weekDates = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 0: [] };
@@ -53,9 +52,16 @@
 
             table += '</tr></table>';
 
-            $('#upcomingMeetings').html(table);
+            $('#eventList').html(table);
         }
     });
 </script>
-    show meetings for 2 weeks (maybe customizable range)
-    <div id="upcomingMeetings" />
+
+@section UpcomingEvents {
+    <div id="header-photo">
+        <strong>List Some Events</strong>
+        <div id="eventList"></div>
+    </div>
+}
+
+Maybe put some words down here.

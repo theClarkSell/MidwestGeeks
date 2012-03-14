@@ -1,0 +1,22 @@
+What Events are coming up?
+- What info is important???
+- Link to site, RSS info
+
+What did I miss?
+- past events with comments from attendees
+- video link (alt.net, mchenry)
+
+Events (schedule for one year out??)
+User Groups(monthly) => angleBracket(3rd thursday), lcnug(2nd thursday), chicagoalt.net(2nd Wed), mchenry (3rd Tues), chicagoruby-Chicago(1st Tuesday) Elmhurst(3rd Sat), Sencha (4th thur?)
+Code Camps (yearly) => Chicago Code Camp, Iowa Code Camp
+Conferences (yearly) => That Conference, Code Mash, WindyCityRails/Db/Go
+Hack-a-thons (whenever)
+geek-fest (weekly) 
+
+- A midwest geek wants to find an event close to his/her parent’s basement so he/she goes to MidwestGeeks.net, pulls up a map, zooms in/out on a map to see events closet to him/her. He/she clicks an event’s pin and a window pops up detailing (event name, website, address, meeting date(s), topics etc) the event.
+(this assumes we have addresses for events)
+
+- A hipster midwest geek only cares about JavaScript topics (obviously) so he/she goes to MidwestGeeks.net to find events relevant to JavaScript. The hipster geek enters ‘JavaScript’ into a filter/search box and only events relevant to JavaScript are returned (If .NET topics are returned MidwestGeeks.net loses all hipster cred). The filtered  results can be returned as a list of events by name, filtered entries in a calendar, or a map with only JavaScript relevent events as pins.
+
+- A midwest geek wants to plan out his/her summer event schedule. The geek goes to MidwestGeeks.net and is overloaded with awesome events happening every weekend and every third Thursday in Grayslake, IL @7pm. This midwest geek enjoys whitespace so he/she filters for Python but there are still too many results so he/she clicks (drags/drops) a few items to his/her ‘My Events’. When he/she views ‘My Events’ a calender (or other type of visual…I’m just rambling now) appears showing on items dragged to ‘My Events’.
+

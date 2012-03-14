@@ -118,6 +118,17 @@
     <Content Include="Content\2011.3.1129\Silver\sprite.png" />
     <Content Include="Content\2011.3.1129\textures\glass.png" />
     <Content Include="Content\2011.3.1129\textures\highlight.png" />
+    <Content Include="Content\images\button.jpg" />
+    <Content Include="Content\images\content-wrap.jpg" />
+    <Content Include="Content\images\content.jpg" />
+    <Content Include="Content\images\firefox-gray.jpg" />
+    <Content Include="Content\images\footer-bottom.jpg" />
+    <Content Include="Content\images\header-bg.jpg" />
+    <Content Include="Content\images\header-photo.jpg" />
+    <Content Include="Content\images\MarketPlace.css" />
+    <Content Include="Content\images\nav-current.jpg" />
+    <Content Include="Content\images\nav.jpg" />
+    <Content Include="Content\MarketPlace.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -201,7 +212,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
