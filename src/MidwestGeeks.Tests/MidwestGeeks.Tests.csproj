@@ -49,6 +49,12 @@
     <Compile Include="NoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MidwestGeeks.Lib\MidwestGeeks.Lib.csproj">
+      <Project>{A5A5BE0C-DACA-4F4E-9B7F-345973045716}</Project>
+      <Name>MidwestGeeks.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

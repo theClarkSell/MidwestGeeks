@@ -3,38 +3,41 @@
 }
 <script>
     $(document).ready(function () {
-        var weekDates = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 0: [] };
-        var upcomingEvents = new kendo.data.DataSource({
-            transport: {
-                read: {
-                    url: "Events/Index",
-                    dataType: "json"
-                },
-                schema: {
-                    data: 'results'
+
+        var viewingWeeksOut = 0; //increments by 1 when user clicks next week
+        var upcomingEvents = {};
+
+        function loadUpcomingEvents(startDate) {
+            var sundayStartDate = startDate.previous().sunday(); //datejs library get sunday of this week
+            var saturdayEndDate = startDate.saturday();
+
+            upcomingEvents = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "Events/Index",
+                        dataType: "json"
+                    },
+                    schema: {
+                        data: 'results'
+                    }
                 }
-            }
-        });
+            });
 
-        upcomingEvents.bind('change', function (data, b, c, d) {
-            handleData();
-        });
-        upcomingEvents.read();
+            upcomingEvents.bind('change', function (arg) {
+                handleData(sundayStartDate);
+            });
+            upcomingEvents.read();
+        }
 
-        function handleData() {
+        function handleData(startDate) {
+            var weekDates = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 0: [] };
             var eventData = upcomingEvents.data().results;
             for (var i = 0; i < eventData.length; i++) {
                 var eventDayIndex = new Date(eventData[i].Date).getDay();
                 weekDates[eventDayIndex].push(eventData[i]);
             }
             var table = '<table><tr>' +
-                '<td>Sunday</td>' +
-                '<td>Monday</td>' +
-                '<td>Tuesday</td>' +
-                '<td>Wednesday</td>' +
-                '<td>Thursday</td>' +
-                '<td>Friday</td>' +
-                '<td>Saturday</td>' +
+                    headerCells(startDate) +
                 '</tr>'
             '<tr>';
             for (var i = 1; i < 6; i++) {
@@ -54,12 +57,36 @@
 
             $('#eventList').html(table);
         }
+
+        function headerCells(startDate) {
+            var cells = '';
+            var dt = startDate;
+            for (var i = 0; i <= 6; i++) {
+                dt.add(1).days();
+                //dddd = day name
+                cells += '<td>' + dt.toString('dddd') + '<br/>' + dt.toString('M/d/yyyy') + '</td>';
+            }
+            return cells;
+        }
+
+        $("#prevWeek").click(function () {
+            viewingWeeksOut -= 1;
+            loadUpcomingEvents(Date.today().add(viewingWeeksOut).weeks());
+        });
+
+        $("#nextWeek").click(function () {
+            viewingWeeksOut += 1;
+            loadUpcomingEvents(Date.today().add(viewingWeeksOut).weeks());
+        });
+
+        loadUpcomingEvents(Date.today().add(viewingWeeksOut).weeks());
     });
 </script>
 
 @section UpcomingEvents {
     <div id="header-photo">
-        <strong>List Some Events</strong>
+        <div id="prevWeek">Previous Week</div>
+        <div id="nextWeek" style="float:right">Next Week</div>
         <div id="eventList"></div>
     </div>
 }

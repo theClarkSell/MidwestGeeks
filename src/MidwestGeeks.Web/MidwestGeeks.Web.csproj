@@ -195,6 +195,7 @@
     <Content Include="Scripts\2011.3.1129\kendo.validator.min.js" />
     <Content Include="Scripts\2011.3.1129\kendo.web.min.js" />
     <Content Include="Scripts\2011.3.1129\kendo.window.min.js" />
+    <Content Include="Scripts\date.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
