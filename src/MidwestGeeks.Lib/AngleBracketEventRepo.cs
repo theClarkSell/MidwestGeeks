@@ -24,6 +24,5 @@ namespace MidwestGeeks.Lib
 
             return reader.ReadToEnd();
         }
-
     }
 }

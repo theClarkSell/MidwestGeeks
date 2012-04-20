@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Raven.Client.Document;
 
 namespace MidwestGeeks
 {
@@ -12,6 +13,8 @@ namespace MidwestGeeks
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static DocumentStore DocumentStore = new DocumentStore { Url = "http://localhost:8080" };
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -26,12 +29,13 @@ namespace MidwestGeeks
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
-
         }
 
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            MvcApplication.DocumentStore.Initialize();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);

@@ -1,0 +1,14 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Users\ppaasch\Documents\github\MidwestGeeks\src\packages\RavenDB.1.0.722-Unstable\server\Raven.Server.exe assembly's progress.
+The file is located at C:\Users\ppaasch\Documents\github\MidwestGeeks\src\packages\RavenDB.1.0.722-Unstable\server\Raven.Server.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Users\ppaasch\Documents\github\MidwestGeeks\src\packages\RavenDB.1.0.722-Unstable\server\Raven.Server.exe assembly's progress.
+The file is located at C:\Users\ppaasch\Documents\github\MidwestGeeks\src\packages\RavenDB.1.0.722-Unstable\server\Raven.Server.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
